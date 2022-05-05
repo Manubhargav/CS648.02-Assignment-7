@@ -47,7 +47,7 @@ class ProductList extends Component {
 		graphQLFetch(query)
 		.then((res) => {
 			this.setState((state, props) => {
-				state.productCount = res.data.getProductCount
+				state.productCount = res.data ? res.data.getProductCount : 0;
 				return state;
 			})
 		})
